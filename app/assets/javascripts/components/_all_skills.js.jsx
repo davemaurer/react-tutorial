@@ -1,17 +1,22 @@
 var AllSkills = React.createClass({
-  getInitialState() {
-    return { skills: [] }
-  },
-
-  componentDidMount() {
-    $.getJSON('api/v1/skills.json', (response) => { this.setState({ skills: response }) });
+  handleDelete() {
+    console.log('in delete skill');
   },
 
   render() {
-    console.log(this.state);
+    let skills = this.props.skills.map((skill, index) => {
+      return (
+        <div key={index}>
+          <h3>{skill.name}</h3>
+          <p><strong>Level:</strong> {skill.level}</p>
+          <p>{skill.details}</p>
+        </div>
+      )
+    });
+
     return (
       <div>
-        <h1>All Skills Full Ahead!</h1>
+        {skills}
       </div>
     )
   }
