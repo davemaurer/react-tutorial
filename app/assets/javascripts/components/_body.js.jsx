@@ -55,10 +55,10 @@ var Body = React.createClass({
   render() {
     return (
       <div>
-        <NewSkill handleSubmit={this.handleSubmit}/>
+        <NewSkill handleSubmit={this.handleSubmit} />
         <AllSkills skills={this.state.skills}
                    handleDelete={this.handleDelete}
-                   onUpdate={this.handleUpdate}/>
+                   onUpdate={this.handleUpdate} />
       </div>
     )
   }
